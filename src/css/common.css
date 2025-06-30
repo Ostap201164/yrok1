@@ -1,0 +1,48 @@
+:root {
+  --absolute-black: #000;
+  --hard-grey: #333;
+  --bodily: #f9fd387a;
+  --shadow: rgba(0, 0, 0, 0.75);
+  --Absolute-White: #fff;
+  --Grey-400: #999;
+  --Grey-700: #262626;
+  --Grey-800: #1a1a1a;
+  --Purple-800: #703bf7;
+  --Grey-950: #141414;
+  --Grey-500: #666;
+  --Blue-700: #3f51b5;
+  --Blue-900: rgba(63, 81, 181, 0.6);
+}
+
+.container {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+}
+
+.shadow-animation {
+  transition: box-shadow 300ms;
+}
+
+.shadow-animation:hover {
+  box-shadow: 10px 8px 5px 0px var(--shadow);
+  -webkit-box-shadow: 10px 8px 5px 0px var(--shadow);
+  -moz-box-shadow: 10px 8px 5px 0px var(--shadow);
+}
+
+@media (min-width: 1440px) {
+  body {
+    padding: 100px 0;
+  }
+
+  .container {
+    width: 1280px;
+    padding: 20px;
+    background-color: var(--Grey-800);
+  }
+}

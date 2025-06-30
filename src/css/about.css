@@ -1,0 +1,227 @@
+.about {
+  padding-bottom: 50px;
+  overflow: hidden;
+  background-color: var(--bodily);
+}
+
+.about__title {
+  padding-bottom: 20px;
+  margin-bottom: 100px;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.5;
+  border-bottom: 3px solid var(--absolute-black);
+}
+
+.people-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 5px solid var(--absolute-black);
+  border-radius: 15px;
+}
+
+.people-card:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.people-card__bg-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0.15;
+}
+
+.people-card__subcontainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.people-card__img {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+.people-card__name {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--absolute-black);
+}
+
+.people-card__description {
+  margin-bottom: 30px;
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--Grey-400);
+}
+
+.people-card__media-list {
+  display: flex;
+  gap: 30px;
+}
+
+.people-card__svg {
+  height: 80px;
+  width: 45px;
+}
+
+.people-card__media-list_desktop {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .about {
+    background-color: transparent;
+  }
+
+  .container_about {
+    background-color: var(--bodily);
+  }
+
+  .container_about::after {
+    content: "";
+    position: absolute;
+    left: 100px;
+    bottom: 620px;
+    width: 400px;
+    height: 400px;
+    background-image: url("./img/triangle.png");
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    transform: rotate(0deg) scale(1);
+    animation-name: perfomence-of-triangle;
+    animation-delay: 3s;
+    animation-duration: 7s;
+  }
+
+  .about__list {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, 457px);
+    grid-template-rows: repeat(2, 250px) 270px;
+    column-gap: 20px;
+    row-gap: 40px;
+    grid-template-areas:
+      "Kate Volodimyr Alex"
+      "Kate Volodimyr Alex"
+      "Kate Mikola Mikola";
+  }
+
+  .about__people-card_Kate {
+    grid-area: Kate;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .about__people-card_Volodimyr {
+    grid-area: Volodimyr;
+  }
+
+  .about__people-card_Alex {
+    grid-area: Alex;
+  }
+
+  .about__people-card_Mikola {
+    grid-area: Mikola;
+    height: fit-content;
+    padding: 5px;
+  }
+
+  .people-card:not(:last-child) {
+    margin-bottom: 0px;
+  }
+
+  .people-card__subcontainer {
+    flex-direction: row;
+    display: block;
+  }
+
+  .people-card__subcontainer_Mikola {
+    display: flex;
+    gap: 39px;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .people-card__subcontainer_desktop {
+    display: flex;
+    gap: 100px;
+  }
+
+  .people-card__description {
+    margin-bottom: 0;
+  }
+
+  .people-card__media-list {
+    display: block;
+  }
+
+  .people-card__media-list_desktop {
+    display: block;
+  }
+
+  .people-card__media-list_mobile {
+    display: none;
+  }
+
+  .people-card__media-list_Kate {
+    display: flex;
+  }
+
+  .people-card__list_Mikola {
+    margin-top: 0;
+  }
+
+  .about__people-card:hover {
+    padding: 0;
+  }
+
+  .about__people-card:hover .people-card__img {
+    border-radius: 10px;
+  }
+
+  .about__people-card_Kate:hover .people-card__img_Kate,
+  .about__people-card_Volodimyr:hover .people-card__img_Volodimyr,
+  .about__people-card_Alex:hover .people-card__img_Alex {
+    width: 100%;
+    height: 100%;
+  }
+  .about__people-card_Kate:hover .people-card__subcontainer_Kate,
+  .about__people-card_Volodimyr:hover .people-card__subcontainer_Volodimyr,
+  .about__people-card_Alex:hover .people-card__subcontainer_Alex {
+    width: 100%;
+    height: 100%;
+  }
+
+  .about__people-card_Mikola:hover .people-card__subcontainer_Mikola {
+    gap: 0;
+    width: 100%;
+  }
+
+  .about__people-card_Mikola:hover .people-card__img_Mikola {
+    width: 100%;
+  }
+
+  .about__people-card:hover .people-card__media-list,
+  .about__people-card:hover .people-card__name,
+  .about__people-card:hover .people-card__description {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
